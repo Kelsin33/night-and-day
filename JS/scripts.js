@@ -2,23 +2,21 @@ $(document).ready(function() {
 	// this code will run after the page loads
 		$('#orb').click(function(){
 			// once orb is clicked, runs if/else statement
-			// which looks first to see if the orb has the .sun class
-			if($('#orb').hasClass('sun')){
-				// if it does, remove .sun class and add the .moon class instead
-				$('#orb').removeClass('sun').addClass('moon');
-			}
-			else {
-				// If it doesn't have the sun class, it must have .moon class already. 
-				// Remove moon and add sun
-				$('#orb').removeClass('moon').addClass('sun');
-			}
-			// Same for #sky div
-			if($('#sky').hasClass('day')){
-					$('#sky').removeClass('day').addClass('night');
+			// which looks first to see if the orb has the .sun class    
+        		if ($(this).hasClass('sun')) {
+           	 $(this).removeClass('sun').addClass('moon');
+		        }
+		        else {
+		            $(this).removeClass('moon').addClass('sun');
+		        }
+			
+				if ($('#sky').hasClass('day')) {
+				    $('#sky').removeClass('day').addClass('night');
 				}
 				else {
-					$('#sky').removeClass('night').addClass('day');
+				    $('#sky').removeClass('night').addClass('day');
 				}
+									// Same for #sky div
 
 				// instead of toggling between two classes
 				// add or remove "visible" class to multiple objects
